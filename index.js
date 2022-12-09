@@ -38,9 +38,32 @@ let movieRent = (function(){
     else{
         console.log("Please fill in your details")
     }
-
+// select movie option function
+    function option(){
+        let option = prompt("Select movie with index")
+        if(option === 1){
+            // console index
+            rentMovie()
+            pay()
+        }
+        else if(option === 2){
+            // console index
+            rentMovie()
+            pay()
+        }
+        else if(option === 3){
+            // console index
+            rentMovie()
+            pay()
+        }
+        else{
+            console.log("Wrong Input")
+        }
+    }
+// logout function
     function logout(){
-        movieRent()
+        let returnUser = movieRent()
+        return returnUser
     }
     let rentMovie = (function(movie){
         let movieIndex = (Number(movie)-1)
@@ -48,6 +71,8 @@ let movieRent = (function(){
         movies.splice(movieIndex,1)
         movieRented.push(movieTitle)
     })
+
+// pay function
     function pay(){
         console.log("\n1. Pay\n", "\n2. Logout\n")
         do{
